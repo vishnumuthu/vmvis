@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/new/imageicon">
+        <file>print.png</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>close.png</file>
+        <file>comport.png</file>
+        <file>help.png</file>
+        <file>test.gif</file>
+        <file>tiicon.png</file>
+    </qresource>
+</RCC>

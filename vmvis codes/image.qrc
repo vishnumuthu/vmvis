@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/new/icons">
+        <file>close.png</file>
+        <file>comport.png</file>
+        <file>help.png</file>
+        <file>print.png</file>
+        <file>test.gif</file>
+        <file>tiicon.png</file>
+        <file>booter.jpg</file>
+        <file>vmvisicon.png</file>
+    </qresource>
+</RCC>

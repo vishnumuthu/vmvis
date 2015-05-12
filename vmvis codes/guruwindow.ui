@@ -1,0 +1,750 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>guruwindow</class>
+ <widget class="QMainWindow" name="guruwindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>420</width>
+    <height>494</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>guruwindow</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="image.qrc">
+    <normaloff>:/new/icons/vmvisicon.png</normaloff>:/new/icons/vmvisicon.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QTabWidget" name="gurutab">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>400</width>
+      <height>400</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>TCP/IP Network</string>
+     </attribute>
+     <widget class="QGroupBox" name="networkgroup">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>371</width>
+        <height>171</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Server Network</string>
+      </property>
+      <widget class="QRadioButton" name="allportandip">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>30</y>
+         <width>131</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="acceptDrops">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string>Allow Any IP and Port</string>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="singleport">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>60</y>
+         <width>161</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Allow any IP and single Port</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="portinput">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>120</y>
+         <width>61</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="maxLength">
+        <number>8</number>
+       </property>
+      </widget>
+      <widget class="QLabel" name="port">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>120</y>
+         <width>31</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Port:</string>
+       </property>
+       <property name="buddy">
+        <cstring>portinput</cstring>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="singleip">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>90</y>
+         <width>171</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Allow Single IP and Single Port</string>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="ip">
+       <property name="geometry">
+        <rect>
+         <x>170</x>
+         <y>120</y>
+         <width>21</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>IP:</string>
+       </property>
+       <property name="buddy">
+        <cstring>ipinput</cstring>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="ipinput">
+       <property name="geometry">
+        <rect>
+         <x>190</x>
+         <y>120</y>
+         <width>121</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="inputMask">
+        <string>000.000.000.000</string>
+       </property>
+       <property name="text">
+        <string>000.000.000.000</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QPushButton" name="serverconnect">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>330</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Connect</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="serverdisconnect">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>330</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Disconnect</string>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="securitygroup">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>200</y>
+        <width>371</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Security Check</string>
+      </property>
+      <widget class="QLabel" name="password">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>20</y>
+         <width>61</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Password:</string>
+       </property>
+       <property name="buddy">
+        <cstring>wordpass</cstring>
+       </property>
+      </widget>
+      <widget class="QLabel" name="verpasslabel">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>50</y>
+         <width>91</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Verify Password:</string>
+       </property>
+       <property name="buddy">
+        <cstring>verifypass</cstring>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="wordpass">
+       <property name="geometry">
+        <rect>
+         <x>140</x>
+         <y>20</y>
+         <width>131</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="maxLength">
+        <number>10</number>
+       </property>
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="verifypass">
+       <property name="geometry">
+        <rect>
+         <x>140</x>
+         <y>50</y>
+         <width>131</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="maxLength">
+        <number>10</number>
+       </property>
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>Camera</string>
+     </attribute>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>270</y>
+        <width>381</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Camera Setup</string>
+      </property>
+      <widget class="QLabel" name="camtype">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>30</y>
+         <width>71</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Camera Type:</string>
+       </property>
+       <property name="buddy">
+        <cstring>cameratype</cstring>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="cameratype">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>30</y>
+         <width>181</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="refresh">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>60</y>
+         <width>75</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Trigger</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="startcam">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>60</y>
+         <width>75</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Start</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="stopcam">
+       <property name="geometry">
+        <rect>
+         <x>270</x>
+         <y>60</y>
+         <width>75</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Stop</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QCameraViewfinder" name="viewfinder" native="true">
+      <property name="geometry">
+       <rect>
+        <x>9</x>
+        <y>9</y>
+        <width>381</width>
+        <height>231</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_3">
+     <attribute name="title">
+      <string>Sensor</string>
+     </attribute>
+     <widget class="QGroupBox" name="sensorgroup">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>280</y>
+        <width>371</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Sensor Setup</string>
+      </property>
+      <widget class="QLabel" name="type">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>61</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Sensor Type</string>
+       </property>
+       <property name="buddy">
+        <cstring>selectsensor</cstring>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="selectsensor">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>20</y>
+         <width>121</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <item>
+        <property name="text">
+         <string>TI Chronos</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Other Sensor</string>
+        </property>
+       </item>
+      </widget>
+      <widget class="QPushButton" name="sensorsetup">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>60</y>
+         <width>75</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Setup</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="sensorconnect">
+       <property name="geometry">
+        <rect>
+         <x>190</x>
+         <y>60</y>
+         <width>75</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Connect</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="sensordisconnect">
+       <property name="geometry">
+        <rect>
+         <x>280</x>
+         <y>60</y>
+         <width>75</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Disconnect</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="testglxyz">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>60</y>
+         <width>75</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Test</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="sensorGL" name="sensordisp" native="true">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>30</y>
+        <width>351</width>
+        <height>231</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_4">
+     <attribute name="title">
+      <string>Terminal</string>
+     </attribute>
+     <widget class="QLabel" name="sensorlabel">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>111</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Sensor Terminal:</string>
+      </property>
+     </widget>
+     <widget class="consoledisp" name="console" native="true">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>60</y>
+        <width>341</width>
+        <height>251</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="clear">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>330</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Clear</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="serialsetup">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>330</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Setting</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="serialconnect">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>330</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Connect</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="serialdisconnect">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>330</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Disconnect</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>420</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionPrint"/>
+    <addaction name="actionClose"/>
+   </widget>
+   <widget class="QMenu" name="menuSensor">
+    <property name="title">
+     <string>Sensor</string>
+    </property>
+    <addaction name="actionTest_Setup"/>
+    <addaction name="actionAbout_Ti_Chronos"/>
+   </widget>
+   <widget class="QMenu" name="menuConnect">
+    <property name="title">
+     <string>Connect</string>
+    </property>
+    <addaction name="actionCom_Port"/>
+   </widget>
+   <widget class="QMenu" name="menuAbout">
+    <property name="title">
+     <string>About</string>
+    </property>
+    <addaction name="actionAbout_V_M_V_I_S"/>
+    <addaction name="actionHelp"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuSensor"/>
+   <addaction name="menuConnect"/>
+   <addaction name="menuAbout"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionPrint"/>
+   <addaction name="actionTest_Setup"/>
+   <addaction name="actionCom_Port"/>
+   <addaction name="actionHelp"/>
+   <addaction name="actionAbout_V_M_V_I_S"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionPrint">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="image.qrc">
+     <normaloff>:/new/icons/print.png</normaloff>:/new/icons/print.png</iconset>
+   </property>
+   <property name="text">
+    <string>Print</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+  </action>
+  <action name="actionClose">
+   <property name="icon">
+    <iconset resource="image.qrc">
+     <normaloff>:/new/icons/close.png</normaloff>:/new/icons/close.png</iconset>
+   </property>
+   <property name="text">
+    <string>Close</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+X</string>
+   </property>
+  </action>
+  <action name="actionTest_Setup">
+   <property name="icon">
+    <iconset resource="image.qrc">
+     <normaloff>:/new/icons/test.gif</normaloff>:/new/icons/test.gif</iconset>
+   </property>
+   <property name="text">
+    <string>Test Setup</string>
+   </property>
+  </action>
+  <action name="actionAbout_Ti_Chronos">
+   <property name="icon">
+    <iconset resource="image.qrc">
+     <normaloff>:/new/icons/tiicon.png</normaloff>:/new/icons/tiicon.png</iconset>
+   </property>
+   <property name="text">
+    <string>About Ti Chronos</string>
+   </property>
+  </action>
+  <action name="actionCom_Port">
+   <property name="icon">
+    <iconset resource="image.qrc">
+     <normaloff>:/new/icons/comport.png</normaloff>:/new/icons/comport.png</iconset>
+   </property>
+   <property name="text">
+    <string>Com Port</string>
+   </property>
+  </action>
+  <action name="actionAbout_V_M_V_I_S">
+   <property name="icon">
+    <iconset resource="image.qrc">
+     <normaloff>:/new/icons/vmvisicon.png</normaloff>:/new/icons/vmvisicon.png</iconset>
+   </property>
+   <property name="text">
+    <string>About vmvis V1.1</string>
+   </property>
+  </action>
+  <action name="actionHelp">
+   <property name="icon">
+    <iconset resource="image.qrc">
+     <normaloff>:/new/icons/help.png</normaloff>:/new/icons/help.png</iconset>
+   </property>
+   <property name="text">
+    <string>Help</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>sensorGL</class>
+   <extends>QWidget</extends>
+   <header>sensorgl.h</header>
+   <container>1</container>
+   <slots>
+    <slot>setXRotation()</slot>
+   </slots>
+  </customwidget>
+  <customwidget>
+   <class>QCameraViewfinder</class>
+   <extends>QWidget</extends>
+   <header>qcameraviewfinder.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>consoledisp</class>
+   <extends>QWidget</extends>
+   <header>consoledisp.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>gurutab</tabstop>
+  <tabstop>allportandip</tabstop>
+  <tabstop>singleport</tabstop>
+  <tabstop>singleip</tabstop>
+  <tabstop>portinput</tabstop>
+  <tabstop>ipinput</tabstop>
+  <tabstop>wordpass</tabstop>
+  <tabstop>verifypass</tabstop>
+  <tabstop>serverconnect</tabstop>
+  <tabstop>serverdisconnect</tabstop>
+  <tabstop>refresh</tabstop>
+  <tabstop>startcam</tabstop>
+  <tabstop>stopcam</tabstop>
+  <tabstop>selectsensor</tabstop>
+  <tabstop>cameratype</tabstop>
+  <tabstop>sensorsetup</tabstop>
+  <tabstop>sensorconnect</tabstop>
+  <tabstop>sensordisconnect</tabstop>
+  <tabstop>testglxyz</tabstop>
+  <tabstop>clear</tabstop>
+  <tabstop>serialsetup</tabstop>
+  <tabstop>serialconnect</tabstop>
+  <tabstop>serialdisconnect</tabstop>
+ </tabstops>
+ <resources>
+  <include location="image.qrc"/>
+ </resources>
+ <connections/>
+</ui>
